@@ -1,0 +1,56 @@
+# 常见忽略文件
+**/__pycache__/
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.env
+*.egg-info/
+dist/
+build/
+
+# IDE和编辑器配置文件
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+# Python虚拟环境
+venv/
+.env/
+# Jupyter Notebook检查点
+.ipynb_checkpoints/
+# Pytest缓存
+.pytest_cache/
+# MyPy缓存
+.mypy_cache/
+# Coverage报告
+.coverage
+.coverage.*
+# 压缩文件
+*.zip
+*.tar.gz
+*.rar
+# 临时文件
+*.tmp
+*.bak
+*.swp
+# 日志文件
+*.log
+# Python编译文件
+*.pyc
+*.pyo
+# Cython编译文件
+*.so
+
+**/cache/
+.hfd/
+demo/test2vec/
+text2vec-large-chinese/
+LexiLaw_finetune/
+LexiLaw_lora/
+LexiLaw_ptuning/
+demo/model/
+demo/text2vec/

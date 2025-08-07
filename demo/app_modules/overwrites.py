@@ -27,8 +27,12 @@ def postprocess(
     return temp
 
 
-with open("./assets/custom.js", "r", encoding="utf-8") as f, open("./assets/Kelpy-Codos.js", "r",
-                                                                  encoding="utf-8") as f2:
+import os
+current_dir = os.path.dirname(os.path.abspath(__file__))
+assets_dir = os.path.join(os.path.dirname(current_dir), "assets")
+
+with open(os.path.join(assets_dir, "custom.js"), "r", encoding="utf-8") as f, \
+     open(os.path.join(assets_dir, "Kelpy-Codos.js"), "r", encoding="utf-8") as f2:
     customJS = f.read()
     kelpyCodos = f2.read()
 

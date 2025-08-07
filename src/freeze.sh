@@ -6,8 +6,8 @@ PORT="11458"
         --train_path /liuzyai04/thuir/lht/context_learning/data/instruction_data/all_instrution.json \
         --max_len 768 \
         --max_input_len 512 \
-        --model_name_or_path /liuzyai04/thuir/lht/context_learning/chatGLM-6B \
-        --tokenizer_name /liuzyai04/thuir/lht/context_learning/chatGLM-6B \
+        --model_name_or_path /home/user/yuanjinmin/LexiLaw/demo/model \
+        --tokenizer_name /home/user/yuanjinmin/LexiLaw/demo/model \
         --lora_rank 8 \
         --per_device_train_batch_size 16 \
         --gradient_accumulation_steps 4 \
@@ -27,8 +27,8 @@ PORT="11458"
 #     --train_path /liuzyai04/thuir/lht/context_learning/data/instruction_data/all_instrution.json \
 #     --max_len 700 \
 #     --max_input_len 350 \
-#     --model_name_or_path /liuzyai04/thuir/lht/context_learning/chatGLM-6B \
-#     --tokenizer_name /liuzyai04/thuir/lht/context_learning/chatGLM-6B \
+#     --model_name_or_path /home/user/yuanjinmin/LexiLaw/demo/model \
+#     --tokenizer_name /home/user/yuanjinmin/LexiLaw/demo/model \
 #     --lora_rank 8 \
 #     --per_device_train_batch_size 2 \
 #     --gradient_accumulation_steps 1 \
@@ -55,8 +55,8 @@ PORT="11458"
 #   --train_path /liuzyai04/thuir/lht/context_learning/data/instruction_data/all_instrution.json \
 #   --max_len 700 \
 #   --max_input_len 350 \
-#   --model_name_or_path /liuzyai04/thuir/lht/context_learning/chatGLM-6B \
-#   --tokenizer_name /liuzyai04/thuir/lht/context_learning/chatGLM-6B \
+#   --model_name_or_path /home/user/yuanjinmin/LexiLaw/demo/model \
+#   --tokenizer_name /home/user/yuanjinmin/LexiLaw/demo/model \
 #   --lora_rank 8 \
 #   --per_device_train_batch_size 2 \
 #   --gradient_accumulation_steps 1 \

@@ -5,17 +5,17 @@ from app_modules.overwrites import postprocess
 from app_modules.presets import *
 from clc.langchain_application import LangChainApplication
 
-
+current_dir = os.path.dirname(os.path.abspath(__file__))  # /home/user/yuanjinmin/LexiLaw/demo
 # 修改成自己的配置！！！
 class LangChainCFG:
-    llm_model_name = '/liuzyai04/thuir/lht/context_learning/chatGLM-6B'  # 本地模型文件 or huggingface远程仓库
-    embedding_model_name = './text2vec'  # 检索模型文件 or huggingface远程仓库
-    vector_store_path = './cache'
-    docs_path = './docs'
+    llm_model_name = current_dir + '/model'  # 本地模型文件 or huggingface远程仓库
+    embedding_model_name = current_dir + '/text2vec'  # 检索模型文件 or huggingface远程仓库
+    vector_store_path = current_dir + '/cache'
+    docs_path = current_dir + '/docs'
     kg_vector_stores = {
-        '刑法法条': './cache/legal_article',
-        '刑法书籍': './cache/legal_book',
-        '初始化': './cache',
+        '刑法法条': current_dir + '/cache/legal_article',
+        '刑法书籍': current_dir + '/cache/legal_book',
+        '初始化': current_dir + '/cache',
     }  # 可以替换成自己的知识库，如果没有需要设置为None
     # kg_vector_stores=None
     patterns = ['模型问答', '知识库问答']  #
@@ -103,11 +103,10 @@ def predict(input,
         search_text += web_content
         return '', history, history, search_text
 
-
-with open("assets/custom.css", "r", encoding="utf-8") as f:
+with open(os.path.join(current_dir, "assets/custom.css"), "r", encoding="utf-8") as f:
     customCSS = f.read()
 with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
-    gr.Markdown("""<h1><center>LexiLaw-中文法律大模型</center></h1>
+    gr.Markdown("""<h1><center>基于法律知识库和大语言模型的法律助手</center></h1>
         <center><font size=3>
         </center></font>
         """)

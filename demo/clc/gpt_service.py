@@ -16,15 +16,15 @@ from typing import List
 
 from accelerate import load_checkpoint_and_dispatch
 from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
+from langchain_community.llms.utils import enforce_stop_tokens
 from transformers import AutoModel, AutoTokenizer
 
 
 class ChatGLMService(LLM):
     max_token: int = 10000
     temperature: float = 0.1
-    top_p = 0.9
-    history = []
+    top_p: float = 0.9
+    history: list = []
     tokenizer: object = None
     model: object = None
 

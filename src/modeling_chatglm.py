@@ -30,7 +30,7 @@ from transformers.utils import logging
 from transformers.generation.logits_process import LogitsProcessor
 from transformers.generation.utils import LogitsProcessorList, StoppingCriteriaList, GenerationConfig, ModelOutput
 
-from configuration_chatglm import ChatGLMConfig
+from LexiLaw_finetune.configuration_chatglm import ChatGLMConfig
 
 # flags required to enable jit fusion kernels
 

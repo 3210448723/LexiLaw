@@ -15,7 +15,7 @@ from peft import get_peft_model, LoraConfig, TaskType
 from dataclasses import dataclass, field
 import datasets
 import logging
-from modeling_chatglm import ChatGLMForConditionalGeneration
+from LexiLaw_finetune.modeling_chatglm import ChatGLMForConditionalGeneration
 from data import InstrutionDataset,InstrutionCollator
 from arguments import ModelArguments, DataTrainingArguments, FinetuneArguments as TrainingArguments
 from transformers.trainer_utils import is_main_process

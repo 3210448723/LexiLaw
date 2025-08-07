@@ -12,10 +12,10 @@
 
 import os
 
-from duckduckgo_search import ddg
-from langchain.document_loaders import UnstructuredFileLoader
-from langchain.embeddings.huggingface import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+from duckduckgo_search import DDGS
+from langchain_community.document_loaders import UnstructuredFileLoader
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
 
 
 class SourceService(object):
@@ -49,23 +49,28 @@ class SourceService(object):
 
     def load_vector_store(self, path):
         if path is None:
-            self.vector_store = FAISS.load_local(self.vector_store_path, self.embeddings)
+            self.vector_store = FAISS.load_local(
+                self.vector_store_path, 
+                self.embeddings,
+                allow_dangerous_deserialization=True
+            )
         else:
-            self.vector_store = FAISS.load_local(path, self.embeddings)
+            self.vector_store = FAISS.load_local(
+                path, 
+                self.embeddings,
+                allow_dangerous_deserialization=True
+            )
         return self.vector_store
 
     def search_web(self, query):
-
-        # SESSION.proxies = {
-        #     "http": f"socks5h://localhost:7890",
-        #     "https": f"socks5h://localhost:7890"
-        # }
+        proxy = 'http://localhost:10809'
         try:
-            results = ddg(query)
+            with DDGS(proxy=proxy) as ddgs:
+                results = ddgs.text(query, max_results=5)
             web_content = ''
             if results:
                 for result in results:
-                    web_content += result['body']
+                    web_content += result.get('body', '')
             return web_content
         except Exception as e:
             print(f"网络检索异常:{query}")

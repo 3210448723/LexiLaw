@@ -10,7 +10,7 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = '4'
 from transformers import AutoTokenizer, AutoModel
 from tokenization_chatglm import ChatGLMTokenizer
-from modeling_chatglm import ChatGLMForConditionalGeneration
+from LexiLaw_finetune.modeling_chatglm import ChatGLMForConditionalGeneration
 model = ChatGLMForConditionalGeneration.from_pretrained("./chatGLM-6B",trust_remote_code=True)
 tokenizer = ChatGLMTokenizer.from_pretrained("./chatGLM-6B", trust_remote_code=True)
 

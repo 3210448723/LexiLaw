@@ -10,7 +10,7 @@
 @description: coding..
 """
 from langchain.chains import RetrievalQA
-from langchain.prompts.prompt import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 
 from clc.config import LangChainCFG
 from clc.gpt_service import ChatGLMService

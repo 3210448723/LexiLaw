@@ -8,7 +8,7 @@ from transformers import AutoModel
 import torch
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = '0'
-from modeling_chatglm import ChatGLMForConditionalGeneration
+from LexiLaw_finetune.modeling_chatglm import ChatGLMForConditionalGeneration
 from tokenization_chatglm import ChatGLMTokenizer
 
 from peft import PeftModel
