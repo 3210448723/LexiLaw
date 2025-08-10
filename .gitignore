@@ -54,3 +54,5 @@ LexiLaw_lora/
 LexiLaw_ptuning/
 demo/model/
 demo/text2vec/
+.history/
+docs/

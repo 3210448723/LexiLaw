@@ -10,9 +10,10 @@ pygments
 gradio==3.50.0
 langchain
 langchain-community
-duckduckgo_search
+ddgs
 sentencepiece
 tensorflow
 sentence-transformers==2.2.2
 faiss-gpu
 tokenizers==0.13.3
+unstructured[doc]
